@@ -1,0 +1,26 @@
+language: node_js
+dist: trusty
+node_js:
+  - "10"
+install:
+  - chmod +x ./build.sh
+script:
+  - ./build.sh
+branches:
+  only:
+    - master
+cache:
+  directories:
+    - workdir/node_modules
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  target_branch: gh-pages
+  email: $GITHUB_EMAIL
+  name: $GITHUB_USER
+  local-dir: workdir/public
+  keep-history: true
+  fqdn: clashx.skk.moe
+  on:
+    branch: master
