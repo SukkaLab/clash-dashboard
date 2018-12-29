@@ -19,7 +19,7 @@ deploy:
   target_branch: gh-pages
   email: $GITHUB_EMAIL
   name: $GITHUB_USER
-  local-dir: workdir/public
+  local-dir: workdir/dist
   keep-history: true
   fqdn: clashx.skk.moe
   on:
