@@ -9,9 +9,6 @@ script:
 branches:
   only:
     - master
-cache:
-  directories:
-    - workdir/node_modules
 deploy:
   provider: pages
   skip-cleanup: true
@@ -19,7 +16,7 @@ deploy:
   target_branch: gh-pages
   email: $GITHUB_EMAIL
   name: $GITHUB_USER
-  local-dir: workdir/dist
+  local-dir: clash-dashboard/dist
   keep-history: true
   fqdn: clashx.skk.moe
   on:
